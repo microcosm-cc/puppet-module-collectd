@@ -1,3 +1,26 @@
+2013-10-07 Release 1.0.0
+
+Summary:
+
+This release breaks some backwards compatibility
+on some plugins where they improperly used strings instead of
+booleans parameters. This release also includes osfamily
+support for SUSE and FreeBSD.
+
+Backwards-incompatible changes:
+
+ - Plugins that use to accept strings now use booleans
+   for a more consistent interface across the various plugins
+ - The main collectd config file now only includes *.conf files
+   to allow plugin specific files to be placed in the conf.d
+   directory.
+
+Features:
+
+ - Add osfamily support for SUSE
+ - Add osfamily support for FreeBSD
+ - Add tail plugin
+
 2013-09-27 Release 0.1.0
 
 Summary:
