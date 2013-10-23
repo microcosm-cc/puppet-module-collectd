@@ -3,20 +3,20 @@ LoadPlugin "postgresql"
 
 <Plugin "postgresql">
 
-<% @queries.each do |qname,qvalue| -%>
-  <Query "<%= qname %>">
-  	Statement "<%=qvalue['statement']%>"
+<% @queries.each do |query| -%>
+  <Query "<%=query['qname']%>">
+    Statement "<%=query['statement']%>"
     <Result>
     </Result>
   </Query>
 <% end -%>
 
-<% @databases.each do |dname,dvalue| -%>
-  <Database "<%= dname %>">
-  	Host "<%=dvalue['host']%>"
-  	Port "<%=dvalue['port']%>"
-  	User "<%=dvalue['user']%>"
-  	Password "<%=dvalue['password']%>"
+<% @databases.each do |database| -%>
+  <Database "<%=database['name']%>">
+  	Host "<%=database['host']%>"
+  	Port "<%=database['port']%>"
+  	User "<%=database['user']%>"
+  	Password "<%=database['password']%>"
   </Database>
 <% end -%>
 
