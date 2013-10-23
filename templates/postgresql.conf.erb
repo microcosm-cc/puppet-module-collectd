@@ -2,7 +2,6 @@
 LoadPlugin "postgresql"
 
 <Plugin "postgresql">
-
 <% @queries.each do |query| -%>
   <Query "<%=query['qname']%>">
     Statement "<%=query['statement']%>"
@@ -10,7 +9,6 @@ LoadPlugin "postgresql"
     </Result>
   </Query>
 <% end -%>
-
 <% @databases.each do |database| -%>
   <Database "<%=database['name']%>">
   	Host "<%=database['host']%>"
@@ -19,5 +17,4 @@ LoadPlugin "postgresql"
   	Password "<%=database['password']%>"
   </Database>
 <% end -%>
-
 </Plugin>
