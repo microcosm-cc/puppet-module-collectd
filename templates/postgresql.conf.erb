@@ -7,7 +7,7 @@ LoadPlugin "postgresql"
     Statement "<%=query['statement']%>"
     <Result>
       Type <%=query['type']%>
-      InstancePrefix <%=query['instance_prefix']%>
+      InstancePrefix "<%=query['instance_prefix']%>"
       ValuesFrom <%=query['values_from']%>
     </Result>
   </Query>
