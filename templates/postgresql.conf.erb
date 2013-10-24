@@ -3,9 +3,12 @@ LoadPlugin "postgresql"
 
 <Plugin "postgresql">
 <% @queries.each do |query| -%>
-  <Query "<%=query['qname']%>">
+  <Query <%=query['name']%>>
     Statement "<%=query['statement']%>"
     <Result>
+      Type <%=query['type']%>
+      InstancePrefix <%=query['instance_prefix']%>
+      ValuesFrom <%=query['values_from']%>
     </Result>
   </Query>
 <% end -%>
@@ -15,6 +18,10 @@ LoadPlugin "postgresql"
   	Port "<%=database['port']%>"
   	User "<%=database['user']%>"
   	Password "<%=database['password']%>"
+    # TODO: this should iterate over all queries
+    Query <%=database['query']%>
+    # TODO: parameterise
+    Interval 60
   </Database>
 <% end -%>
 </Plugin>
