@@ -20,6 +20,10 @@ LoadPlugin "postgresql"
   	Password "<%=database['password']%>"
     # TODO: this should iterate over all queries
     Query <%=database['query']%>
+    Query usage
+    Query queries
+    Query transactions
+    Query disk_io
     Interval <%=database['interval']%>
   </Database>
 <% end -%>
