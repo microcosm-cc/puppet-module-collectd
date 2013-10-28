@@ -18,12 +18,9 @@ LoadPlugin "postgresql"
   	Port "<%=database['port']%>"
   	User "<%=database['user']%>"
   	Password "<%=database['password']%>"
-    # TODO: this should iterate over all queries
-    Query <%=database['query']%>
-    Query usage
-    Query queries
-    Query transactions
-    Query disk_io
+    <% database['queries'].each do |query| -%>
+    Query <%=query%>
+    <% end -%>
     Interval <%=database['interval']%>
   </Database>
 <% end -%>
